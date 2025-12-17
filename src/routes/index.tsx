@@ -1,12 +1,18 @@
 import { createRoute } from '@tanstack/react-router';
-import { Route as RootRoute } from './__root';
+
+import { HolodeckRoute } from './holodeck';
 
 export const IndexRoute = createRoute({
-  getParentRoute: () => RootRoute,
+  getParentRoute: () => HolodeckRoute,
   path: '/',
   component: Index,
 });
 
 function Index() {
-  return <div>Home route is rendering</div>;
+  return (
+    <div className="welcome-message">
+      <h1>Welcome</h1>
+      <p>Select a room to join</p>
+    </div>
+  );
 }
